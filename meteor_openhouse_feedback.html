@@ -1,0 +1,16 @@
+<head>
+  <title>OpenHouse</title>
+</head>
+
+<body>
+  <h1>Open House</h1>
+  {{> openhouse}}
+</body>
+
+<template name="openhouse">
+    <h1>{{text1}}</h1>
+    {{#each listings}}
+      <ul>{{address}}, {{city}} {{zipCode}}</ul>
+     {{/each}}
+  
+</template>
