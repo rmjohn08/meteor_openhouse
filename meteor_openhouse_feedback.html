@@ -13,4 +13,20 @@
       <ul>{{address}}, {{city}} {{zipCode}}</ul>
      {{/each}}
   
+    {{> locationForm}}
+</template>
+
+<template name="locationForm">
+   <form>
+     <label for="locationAddress">Address:
+       <input type="text" name="locationAddress"/>
+     </label>
+     <label for="locationCity">City:
+       <input type="text" name="locationCity"/>
+     </label>
+     <label for="locationName">Zip:
+       <input type="text" name="locationZip"/>
+     </label>
+     <input type="submit" value="Save">
+  </form>
 </template>

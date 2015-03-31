@@ -52,8 +52,22 @@ if (Meteor.isClient) {
   Template.openhouse.events({
     // events go here
     'click ul': function(item) {
-      console.log('you clicked the openhouse template....' + item.target.textContent);
+      console.log('you clicked the openhouse template....' + this._id); //item.target.textContent);
     }
+    
+  });
+  
+  Template.locationForm.events({
+      'submit form':function(e) {
+        e.preventDefault();
+        console.log('form getting submitted...');
+        var loc = e.target;
+        OpenHouseList.insert({
+          address: loc.locationAddress.value,
+          city: loc.locationCity.value,
+          zipCode : loc.locationZip.value
+        });
+      }
     
   });
   
